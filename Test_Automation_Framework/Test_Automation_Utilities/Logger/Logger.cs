@@ -4,12 +4,11 @@ namespace Epam_TestAutomation_Utilities.Logger
 {
     public static class Logger
     {
-        public static ThreadLocal<List<string>> _logger = 
-            new ThreadLocal<List<string>>(() => new List<string>());
+        private static ThreadLocal<List<string>> _log = new ThreadLocal<List<string>>(() => new List<string>());
 
         public static void Info(string message)
         {
-            _logger.Value.Add(message);
+            _log.Value.Add(message);
         }
 
         public static void InitLogger(string filePath)
@@ -26,8 +25,8 @@ namespace Epam_TestAutomation_Utilities.Logger
 
         public static void FinishTestLog()
         {
-            _logger.Value.ForEach(x => Log.Logger.Information(x));
-            _logger.Value.Clear();
+            _log.Value.ForEach(x => Log.Logger.Information(x));
+            _log.Value.Clear();
         }
     }
 }
