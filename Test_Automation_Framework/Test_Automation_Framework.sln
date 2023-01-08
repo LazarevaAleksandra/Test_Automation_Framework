@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_Core", "Test_Automation_Framework\Epam_TestAutomation_Core.csproj", "{F07852AB-A284-4339-AC5E-B1234DAAF1B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_Core", "Test_Automation_Framework\Epam_TestAutomation_Core.csproj", "{F07852AB-A284-4339-AC5E-B1234DAAF1B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_Utilities", "Test_Automation_Utilities\Epam_TestAutomation_Utilities.csproj", "{C211AEB6-4D6F-4FE1-A8BC-4ACB46EC9343}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_Utilities", "Test_Automation_Utilities\Epam_TestAutomation_Utilities.csproj", "{C211AEB6-4D6F-4FE1-A8BC-4ACB46EC9343}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_Tests", "EPAM_TestAutomation_Tests\Epam_TestAutomation_Tests.csproj", "{2B0E2033-B269-4B7A-A783-7B961946E101}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_Tests", "EPAM_TestAutomation_Tests\Epam_TestAutomation_Tests.csproj", "{2B0E2033-B269-4B7A-A783-7B961946E101}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_BusinessLogic", "Epam_TestAutomation_BusinessLogic\Epam_TestAutomation_BusinessLogic.csproj", "{5280A5D1-9988-425A-9F65-FE41D816C652}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2B0E2033-B269-4B7A-A783-7B961946E101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B0E2033-B269-4B7A-A783-7B961946E101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B0E2033-B269-4B7A-A783-7B961946E101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5280A5D1-9988-425A-9F65-FE41D816C652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5280A5D1-9988-425A-9F65-FE41D816C652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5280A5D1-9988-425A-9F65-FE41D816C652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5280A5D1-9988-425A-9F65-FE41D816C652}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

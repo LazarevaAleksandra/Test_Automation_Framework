@@ -18,4 +18,9 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="108.0.5359.7100" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Test_Automation_Framework\Epam_TestAutomation_Core.csproj" />
+    <ProjectReference Include="..\Test_Automation_Utilities\Epam_TestAutomation_Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

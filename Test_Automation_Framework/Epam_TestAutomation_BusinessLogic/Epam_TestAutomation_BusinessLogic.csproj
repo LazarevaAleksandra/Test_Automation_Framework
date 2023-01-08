@@ -4,18 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UserSecretsId>5e14efbf-8115-4d1d-808a-5b08a066de53</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Selenium.WebDriver" Version="4.7.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="108.0.5359.7100" />
-    <PackageReference Include="ServiceStack.Common" Version="6.5.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Test_Automation_Utilities\Epam_TestAutomation_Utilities.csproj" />
+    <ProjectReference Include="..\Test_Automation_Framework\Epam_TestAutomation_Core.csproj" />
   </ItemGroup>
 
 </Project>

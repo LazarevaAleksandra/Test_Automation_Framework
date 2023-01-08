@@ -74,6 +74,8 @@ namespace Epam_TestAutomation_Core.Browser
             set => _driver.Url = value;
         }
 
+        public WebDriverWait Waiters() => new WebDriverWait(_driver, TestSettings.WebDriverTimeOut);
+
         public Actions Action => new Actions(_driver);
 
         public IWebElement FindElement(By locator)

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Epam_TestAutomation_Core.Utils
+namespace Epam_TestAutomation_Utilities.Utils
 {
-    public static class Utils
+    public static class EnumUtils
     {
         public static T ParseEnum<T>(string value) where T : IComparable, IFormattable, IConvertible
         {
