@@ -17,8 +17,6 @@ namespace Epam_TestAutomation_Tests
         {
             var link = TestSettings.ApplicationUrl;
 
-            BrowserFactory.Browser.GoToUrl(link);
-
             Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(link), "Incorrect url is present!");
         }
 
@@ -27,7 +25,6 @@ namespace Epam_TestAutomation_Tests
         {
             var linkOurWork = "https://www.epam.com/our-work";
 
-            BrowserFactory.Browser.GoToUrl(TestSettings.ApplicationUrl);
             BrowserFactory.Browser.GoToUrl(linkOurWork);
             BrowserFactory.Browser.Refresh();
             BrowserFactory.Browser.Back();
