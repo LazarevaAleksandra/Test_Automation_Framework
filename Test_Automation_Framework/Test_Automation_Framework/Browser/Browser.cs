@@ -4,6 +4,7 @@ using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 using Epam_TestAutomation_Utilities.Logger;
 using Epam_TestAutomation_Core.Helper;
+using Epam_TestAutomation_Core.Screenshot;
 
 namespace Epam_TestAutomation_Core.Browser
 {
@@ -75,6 +76,11 @@ namespace Epam_TestAutomation_Core.Browser
         }
 
         public WebDriverWait Waiters() => new WebDriverWait(_driver, TestSettings.WebDriverTimeOut);
+
+        public void SaveScreenshoot(string screenshotName, string folderPath)
+        {
+            ScreenshotTaker.TakeScreenshot(_driver, screenshotName, folderPath);
+        }
 
         public Actions Action => new Actions(_driver);
 

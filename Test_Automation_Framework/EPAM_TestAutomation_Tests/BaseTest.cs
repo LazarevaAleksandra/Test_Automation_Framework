@@ -27,6 +27,11 @@ namespace Epam_TestAutomation_Tests
         [TearDown]
         public virtual void CleanTest()
         {
+            if (TestContext.CurrentContext.Result.Outcome.Status == NUnit.Framework.Interfaces.TestStatus.Failed)
+            {
+                Logger.Info("Test is failed");
+                BrowserFactory.Browser.SaveScreenshoot(TestContext.CurrentContext.Test.MethodName, Path.Combine(TestContext.TestDirectory, TestSettings.ScreenShotPath));
+            }
             Logger.Info("Test finish");
             BrowserFactory.Browser.Quit();
         }

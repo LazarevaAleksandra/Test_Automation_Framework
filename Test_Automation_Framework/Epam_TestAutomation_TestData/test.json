@@ -1,0 +1,7 @@
+{
+  "applicationUrl": "https://www.epam.com/",
+  "screenshotPath": "C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Test_Automation_Framework\Screenshot",
+  "logsPath": "C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Test_Automation_Utilities\Logs",
+  "webDriverTimeOut": 60,
+  "defaultTimeOut": 60
+}

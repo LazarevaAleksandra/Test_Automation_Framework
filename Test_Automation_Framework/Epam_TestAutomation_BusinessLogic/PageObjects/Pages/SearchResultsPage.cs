@@ -4,14 +4,14 @@ using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Helper;
 
-namespace Epam_TestAutomation_BusinessLogic.PageObjects
+namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
-    internal class PageObjects : BasePage
+    internal class SearchResultsPage : BasePage
     {
         public Label Title => new Label(By.TagName("h1"));
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
-        
+
     }
 }
 

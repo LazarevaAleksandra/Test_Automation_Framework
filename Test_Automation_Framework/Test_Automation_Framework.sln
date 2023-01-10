@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_Utiliti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_Tests", "EPAM_TestAutomation_Tests\Epam_TestAutomation_Tests.csproj", "{2B0E2033-B269-4B7A-A783-7B961946E101}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_BusinessLogic", "Epam_TestAutomation_BusinessLogic\Epam_TestAutomation_BusinessLogic.csproj", "{5280A5D1-9988-425A-9F65-FE41D816C652}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_BusinessLogic", "Epam_TestAutomation_BusinessLogic\Epam_TestAutomation_BusinessLogic.csproj", "{5280A5D1-9988-425A-9F65-FE41D816C652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_TestData", "Epam_TestAutomation_TestData\Epam_TestAutomation_TestData.csproj", "{47465992-0D10-4B47-B9FE-3EBD1DF28807}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5280A5D1-9988-425A-9F65-FE41D816C652}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5280A5D1-9988-425A-9F65-FE41D816C652}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5280A5D1-9988-425A-9F65-FE41D816C652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47465992-0D10-4B47-B9FE-3EBD1DF28807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47465992-0D10-4B47-B9FE-3EBD1DF28807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47465992-0D10-4B47-B9FE-3EBD1DF28807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47465992-0D10-4B47-B9FE-3EBD1DF28807}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

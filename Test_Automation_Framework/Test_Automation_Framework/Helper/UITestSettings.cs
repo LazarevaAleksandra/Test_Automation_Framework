@@ -13,5 +13,8 @@ namespace Epam_TestAutomation_Core.Helper
 
         public static readonly TimeSpan WaitElementTimeOut = TimeSpan.FromSeconds
             (int.Parse(GetConfigurationValue("WaitElementTimeOut") ?? "0"));
+
+        public static readonly string ScreenShotPath = Path.Combine(Directory.GetCurrentDirectory(), 
+            GetConfigurationValue("ScreenShotPath") ?? string.Empty);
     }
 }
