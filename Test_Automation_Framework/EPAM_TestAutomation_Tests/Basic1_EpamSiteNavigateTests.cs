@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Epam_TestAutomation_Tests
 {
     [TestFixture]
-    public class EpamSiteNavigateTests : BaseTest
+    public class Basic1_EpamSiteNavigateTests : BaseTest
     {
         [Test]
         public void CheckBrowserPageTest()

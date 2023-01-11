@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Epam_TestAutomation_BusinessLogic\Epam_TestAutomation_BusinessLogic.csproj" />
     <ProjectReference Include="..\Test_Automation_Framework\Epam_TestAutomation_Core.csproj" />
     <ProjectReference Include="..\Test_Automation_Utilities\Epam_TestAutomation_Utilities.csproj" />
   </ItemGroup>
