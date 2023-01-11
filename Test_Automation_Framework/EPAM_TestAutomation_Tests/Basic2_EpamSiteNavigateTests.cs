@@ -62,7 +62,7 @@ namespace Epam_TestAutomation_Tests
             titleOfTheFirstArticle.Click();
             var titleBusinessAnalysis = _searchResultsPage.TitleBusinessAnalysis.GetAttribute("innerText");
 
-            Assert.AreEqual(titleBusinessAnalysis, title, "Incorrect title is present!");
+            Assert.That(titleBusinessAnalysis, Is.EqualTo(title), "Incorrect title is present!");
         }
     }
 }
