@@ -1,15 +1,23 @@
-﻿using System.Configuration;
+﻿using Epam_TestAutomation_Core.Enum;
+using Epam_TestAutomation_Utilities.Utils;
+using NUnit.Framework;
 
 namespace Epam_TestAutomation_Core.Helper
 {
     public static partial class TestSettings
     {
-        public static string ApplicationUrl = GetConfigurationValue("ApplicationUrl");
+        public static TestContext TestContext { get; set; }
 
-        public static string LogsPath = Path.Combine(Directory.GetCurrentDirectory(), GetConfigurationValue("LogsPath"));
+        public static BrowserType Browser => EnumUtils.ParseEnum<BrowserType>(TestContext.Parameters.Get("Browser").ToString());
 
-        public static string TestResourcesFolder => Path.Combine(Directory.GetCurrentDirectory(), GetConfigurationValue("TestResourcesFolder"));
+        public static string ScreenShotPath => TestContext.Parameters.Get("ScreenShotPath").ToString();
 
-        private static string GetConfigurationValue(string parameter) => ConfigurationManager.AppSettings.Get(parameter);
+        public static string LogsPath => Path.Combine(TestContext.TestDirectory, @TestContext.Parameters.Get("LogsPath").ToString());
+
+        public static TimeSpan WebDriverTimeOut => TimeSpan.FromSeconds(int.Parse(TestContext.Parameters.Get("WebDriverTimeOut").ToString()));
+
+        public static string DefaultTimeOut => TestContext.Parameters.Get("WaitElementTimeOut").ToString();
+
+        public static string ApplicationUrl => TestContext.Parameters.Get("ApplicationUrl").ToString();
     }
 }
