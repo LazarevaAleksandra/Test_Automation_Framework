@@ -29,6 +29,14 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         public Button OnetrustAcceptButton = new Button(By.XPath("//button[@id='onetrust-accept-btn-handler']"));
 
         public Label TitleBusinessAnalysis = new Label(By.XPath("//*[@class='layout-box__wrapper']//h1"));
+
+        public Button JobListingsButton = new Button(By.XPath("//*[@href = '/careers/job-listings']"));
+
+        public Button LanguagesButton = new Button(By.XPath("//*[@class='location-selector__button']"));
+
+        public Label FrequentList = new Label(By.XPath("//*[@class='frequent-searches__item' and contains(text(), 'Cloud')]"));
+
+        public Label SearchFooter = new Label(By.XPath("//*[@class='search-results__footer']"));
     }   
 }
 

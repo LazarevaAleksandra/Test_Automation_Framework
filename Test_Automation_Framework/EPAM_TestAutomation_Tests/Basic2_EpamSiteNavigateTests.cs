@@ -38,7 +38,7 @@ namespace Epam_TestAutomation_Tests
             _searchResultsPage.SearchButton.Click();
             _searchResultsPage.FormSearch.SendKeys("Automation");
             _searchResultsPage.HeaderSearchButton.Click();
-            var articles = _searchResultsPage.Articles.FindElements(By.XPath("//*[@class = 'search-results__item']"))
+            var articles = BrowserFactory.Browser.FindElements(By.XPath("//*[@class = 'search-results__item']"))
                 .Take(5).Select(item => item.Text);
 
             Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkAutomation), "Incorrect url is present!");
