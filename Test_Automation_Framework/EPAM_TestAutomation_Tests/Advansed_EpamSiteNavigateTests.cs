@@ -1,5 +1,6 @@
 ﻿using Epam_TestAutomation_BusinessLogic.PageObjects.Pages;
 using Epam_TestAutomation_Core.Browser;
+using Epam_TestAutomation_Core.Elements;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -20,7 +21,7 @@ namespace Epam_TestAutomation_Tests
         {
             var linkJob = "https://www.epam.com/careers/job-listings";
             var career = _searchResultsPage.CareerButton;
-            BrowserFactory.Browser.Action.MoveToElement((IWebElement)career);
+            BrowserFactory.Browser.Action.MoveToElement(career.OriginalWebElement);
             BrowserFactory.Browser.Action.Perform();
             _searchResultsPage.JobListingsButton.Click();
 
@@ -58,8 +59,8 @@ namespace Epam_TestAutomation_Tests
             BrowserFactory.Browser.ExecuteScript("arguments[0].click()", _searchResultsPage.SearchButton);
             _searchResultsPage.FrequentList.Click();
             _searchResultsPage.HeaderSearchButton.Click();
-            BrowserFactory.Browser.Action.ScrollToElement((IWebElement)_searchResultsPage.SearchFooter).Perform();
-            var actualResult = new List<IWebElement> ((IEnumerable<IWebElement>)_searchResultsPage.Articles);
+            BrowserFactory.Browser.Action.ScrollToElement(_searchResultsPage.SearchFooter.OriginalWebElement).Perform();
+            var actualResult = new List<Label> ((IEnumerable<Label>)_searchResultsPage.Articles);
 
             Assert.That(actualResult, Has.Count.EqualTo(expectedResult), "Incorrect number of articles on the site");
         }

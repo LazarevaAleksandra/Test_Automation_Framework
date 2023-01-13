@@ -23,13 +23,15 @@ namespace Epam_TestAutomation_Tests
         [Test]
         public void CheckPageAfterReloadTest()
         {
+            var linkHoWeDoIt = "https://www.epam.com/how-we-do-it";
             var linkOurWork = "https://www.epam.com/our-work";
 
+            BrowserFactory.Browser.GoToUrl(linkHoWeDoIt);
             BrowserFactory.Browser.GoToUrl(linkOurWork);
             BrowserFactory.Browser.Refresh();
             BrowserFactory.Browser.Back();
 
-            Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkOurWork), "Incorrect url is present!");
+            Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkHoWeDoIt), "Incorrect url is present!");
         }    
     }
 }
