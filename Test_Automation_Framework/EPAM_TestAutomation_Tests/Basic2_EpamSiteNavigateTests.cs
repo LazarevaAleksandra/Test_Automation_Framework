@@ -21,10 +21,8 @@ namespace Epam_TestAutomation_Tests
         {
             var countries = new List<string> { "AMERICAS", "EMEA", "APAC" };
 
-            _searchResultsPage.CareerButton.Click();
-            var ourOfficesCareer = _searchResultsPage.OurOfficesCareer;
-            var careerElements = ourOfficesCareer.FindElements(By.XPath(".//div"))
-                .Select(item => item.GetAttribute("innerText"));
+            _searchResultsPage.CareerButton.Click();      
+            var careerElements = _searchResultsPage.CareerElementsList.GetElements().Select(item => item.GetAttribute("innerText"));
 
             Assert.That(careerElements.Count(), Is.EqualTo(3), "Invalid number of countries!");
             Assert.That(careerElements, Is.EqualTo(countries), "Incorrect country name!");
@@ -38,8 +36,7 @@ namespace Epam_TestAutomation_Tests
             _searchResultsPage.SearchButton.Click();
             _searchResultsPage.FormSearch.SendKeys("Automation");
             _searchResultsPage.HeaderSearchButton.Click();
-            var articles = BrowserFactory.Browser.FindElements(By.XPath("//*[@class = 'search-results__item']"))
-                .Take(5).Select(item => item.Text);
+            var articles = _searchResultsPage.Articles.GetElements().Take(5).Select(item => item.Text);
 
             Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkAutomation), "Incorrect url is present!");
             Assert.That(articles, Is.All.Contain("Automation").IgnoreCase, "This word is not in the article!");

@@ -20,7 +20,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Button HeaderSearchButton => new Button(By.XPath("//*[@class = 'header-search__submit']"));
 
-        public Label Articles => new Label(By.XPath("//*[@class = 'search-results__item']"));
+        public ElementList Articles => new ElementList(By.XPath("//*[@class = 'search-results__item']"));
 
         public Label Title => new Label(By.XPath("//*[@class = 'search-results__title-link']"));
 
@@ -37,6 +37,10 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         public Label FrequentList => new Label(By.XPath("//*[@class='frequent-searches__item' and contains(text(), 'Cloud')]"));
 
         public Label SearchFooter => new Label(By.XPath("//*[@class='search-results__footer']"));
+
+        public ElementList ListOfLanguages = new ElementList(By.XPath("//*[@class = 'location-selector__item']"));
+
+        public ElementList CareerElementsList = new ElementList(By.XPath(".//div"));
     }   
 }
 

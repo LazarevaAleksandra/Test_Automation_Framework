@@ -44,9 +44,7 @@ namespace Epam_TestAutomation_Tests
                 "DACH (Deutsch)", 
                 "Polska (Polski)"};
             _searchResultsPage.LanguagesButton.Click();
-            var actualListOfLanguages = BrowserFactory.Browser.Waiters().
-                Until(driver => driver.FindElements(By.XPath("//*[@class = 'location-selector__item']")))
-                .Select(language => language.GetAttribute("innerText"));
+            var actualListOfLanguages = _searchResultsPage.ListOfLanguages.GetElements().Select(language => language.GetAttribute("innerText"));
 
             Assert.That(actualListOfLanguages, Is.EqualTo(expectedlistOfLanguages), "Incorrect list of languages is present!");
         }
