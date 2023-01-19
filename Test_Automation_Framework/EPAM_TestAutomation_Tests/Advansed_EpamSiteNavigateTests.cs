@@ -60,7 +60,7 @@ namespace Epam_TestAutomation_Tests
             BrowserFactory.Browser.Action.ScrollToElement(_searchResultsPage.SearchFooter.OriginalWebElement).Perform();
             var actualResult = new List<Label> ((IEnumerable<Label>)_searchResultsPage.Articles);
 
-            Assert.That(actualResult, Has.Count.EqualTo(expectedResult), "Incorrect number of articles on the site");
+            Assert.That(actualResult, Has.Count.EqualTo(expectedResult), "Incorrect number of articles on the site!");
         }
     }
 }
