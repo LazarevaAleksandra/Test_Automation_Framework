@@ -6,6 +6,7 @@ using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_Tests
 {
+    [TestFixture]
     public class Advansed_EpamSiteNavigateTests : BaseTest
     {
         private SearchResultsPage _searchResultsPage;
@@ -54,11 +55,11 @@ namespace Epam_TestAutomation_Tests
         {
             int expectedResult = 20;
 
-            BrowserFactory.Browser.ExecuteScript("arguments[0].click()", _searchResultsPage.SearchButton);
+            _searchResultsPage.SearchButton.Click();
             _searchResultsPage.FrequentList.Click();
             _searchResultsPage.HeaderSearchButton.Click();
             BrowserFactory.Browser.Action.ScrollToElement(_searchResultsPage.SearchFooter.OriginalWebElement).Perform();
-            var actualResult = new List<Label> ((IEnumerable<Label>)_searchResultsPage.Articles);
+            var actualResult =_searchResultsPage.Articles.GetElements();
 
             Assert.That(actualResult, Has.Count.EqualTo(expectedResult), "Incorrect number of articles on the site!");
         }
