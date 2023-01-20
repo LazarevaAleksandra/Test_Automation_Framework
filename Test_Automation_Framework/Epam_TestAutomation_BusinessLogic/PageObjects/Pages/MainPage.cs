@@ -6,7 +6,7 @@ using Epam_TestAutomation_Core.Helper;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
-    public class SearchResultsPage : BasePage
+    public class MainPage : BasePage
     {
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
 

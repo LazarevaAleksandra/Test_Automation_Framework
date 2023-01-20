@@ -1,5 +1,4 @@
 ﻿using Epam_TestAutomation_Core.Browser;
-using Epam_TestAutomation_Core.Driver;
 using OpenQA.Selenium;
 using System.Collections.ObjectModel;
 using System.Drawing;

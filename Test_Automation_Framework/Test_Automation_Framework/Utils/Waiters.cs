@@ -1,5 +1,4 @@
 ﻿using Epam_TestAutomation_Core.Browser;
-using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_Core.Utils
 {

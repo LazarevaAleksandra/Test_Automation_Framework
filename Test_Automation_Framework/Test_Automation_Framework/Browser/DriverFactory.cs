@@ -1,7 +1,6 @@
 ﻿using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Enum;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
 namespace Epam_TestAutomation_Core.Driver
 {
