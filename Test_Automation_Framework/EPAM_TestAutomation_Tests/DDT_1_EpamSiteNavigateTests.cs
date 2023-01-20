@@ -83,7 +83,8 @@ namespace Epam_TestAutomation_Tests
             {
                 Assert.That(resultErrorMessage, Is.True, "System error!");
                 Assert.That(expResultErrorMessage.Equals(actResultErrorMessage), "Incorrect error entry!");
-            });
+            }
+            );
         }
     }
 }
