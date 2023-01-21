@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace Epam_TestAutomation_Tests
 {
     [TestFixture]
+    [Parallelizable(ParallelScope.All)]
     public class DDT_1_EpamSiteNavigateTests : BaseTest
     {
         private JoinOurTeamPages _joinOurTeamPages;
