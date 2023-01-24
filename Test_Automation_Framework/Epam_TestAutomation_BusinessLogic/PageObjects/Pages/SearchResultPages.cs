@@ -11,9 +11,13 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
     {
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
 
+        public ElementList Articles => new ElementList(By.XPath("//*[@class = 'search-results__item']"));
+
+        public Label Title => new Label(By.XPath("//*[@class = 'search-results__title-link']"));
+
         public ElementList ResultsList => new ElementList(By.XPath("//*[@class='search-result__item-name']"));
 
-        public Label ErrorMessage => new Label(By.XPath("//*[@class='search-result__error-message']"));
+        public Label SearchResultTitle => new Label(By.XPath("//*[@class='search-result__heading']"));
 
         public bool GetResultsKeyword(string keyword)
         {
@@ -22,8 +26,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             return result.Any();
         }
 
-        public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();
-
-        public string ActualErrorMessage() => ErrorMessage.GetAttribute("innerText");
+        
     }
 }

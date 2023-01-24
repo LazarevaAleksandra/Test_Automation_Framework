@@ -11,7 +11,7 @@ namespace Epam_TestAutomation_Tests
     public class DDT_1_EpamSiteNavigateTests : BaseTest
     {
         private JoinOurTeamPages _joinOurTeamPages;
-        private SearchResultPages _searchResultPages;
+        private SearchResultPages _searchResultPages;     
 
         private static List<Professions> GetProfessionsNames() => TestDataSettings.ProfessionsNames;
         private static List<Locations> GetLocationsNames() => TestDataSettings.LocationsNames;
@@ -30,7 +30,7 @@ namespace Epam_TestAutomation_Tests
         [Test]
         [TestCaseSource(nameof(GetProfessionsNames))]
         public void CheckKeywordInProfessionResultTest(Professions keyword)
-        {         
+        {
             _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetProfessionKeyword(keyword.ProfessionKeyword);
             var result = _searchResultPages.GetResultsKeyword(keyword.ProfessionKeyword);
 
@@ -75,17 +75,12 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(ErrorMessagesNames))]
         public void CheckErrorMessageResultTest(ErrorMessage error)
         {
-            var resultErrorMessage = _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetErrorMessage(error.ProfessionName, error.LocationName); 
-            _searchResultPages.ErrorMessageDisplayed();
+            var resultErrorMessage = _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetErrorMessage(error.ProfessionName, error.LocationName).ErrorMessageDisplayed();
             var expResultErrorMessage = "Sorry, your search returned no results. Please try another combination.";
-            var actResultErrorMessage = _searchResultPages.ActualErrorMessage();
-
-            Assert.Multiple(() =>
-            {
-                Assert.That(resultErrorMessage, Is.True, "System error!");
-                Assert.That(expResultErrorMessage.Equals(actResultErrorMessage), "Incorrect error entry!");
-            }
-            );
+            var actResultErrorMessage = _joinOurTeamPages.ActualErrorMessage();
+        
+            Assert.That(resultErrorMessage, Is.True, "System error!");
+            Assert.That(expResultErrorMessage.Equals(actResultErrorMessage), "Incorrect error entry!");                     
         }
     }
 }

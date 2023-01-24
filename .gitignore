@@ -4,6 +4,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_Tests\Screenshots
+
 # User-specific files
 *.rsuser
 *.suo

@@ -1,10 +1,10 @@
 [
   {
-    "keywordProfessions": "qa",
+    "keywordProfession": "qa",
     "keywordLocation": "Beijing"
   },
   {
-    "keywordProfessions": "ios",
+    "keywordProfession": "ios",
     "keywordLocation": "Burgas"
   }
 ]

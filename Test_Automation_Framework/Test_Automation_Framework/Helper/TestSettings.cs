@@ -12,21 +12,14 @@ namespace Epam_TestAutomation_Core.Helper
 
         public static BrowserType Browser => EnumUtils.ParseEnum<BrowserType>(TestContext.Parameters.Get("Browser").ToString());
 
-        public static string ScreenShotPath => SetUp.ScreenShotPath;
+        public static string ScreenShotPath => TestContext.Parameters.Get("ScreenShotPath").ToString();
 
-        public static string LogsPath => SetUp.LogsPath;
+        public static string LogsPath => Path.Combine(TestContext.TestDirectory, @TestContext.Parameters.Get("LogsPath").ToString());
 
-        public static TimeSpan WebDriverTimeOut => TimeSpan.FromSeconds(SetUp.WebDriverTimeOut);
+        public static TimeSpan WebDriverTimeOut => TimeSpan.FromSeconds(int.Parse(TestContext.Parameters.Get("WebDriverTimeOut").ToString()));
 
         public static string DefaultTimeOut => TestContext.Parameters.Get("WaitElementTimeOut").ToString();
 
-        public static string ApplicationUrl => SetUp.ApplicationUrl;
-
-        public static string JoinOurTeamUrl => SetUp.JoinOurTeamUrl;
-
-        public static SetUp SetUp => GetSetUp();
-
-        public static SetUp GetSetUp() => JsonParser.DeserializeJsonToObject<SetUp>
-            (@"C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_TestData\JoinOurTeamInfo\SetUp.json");
+        public static string ApplicationUrl => TestContext.Parameters.Get("ApplicationUrl").ToString();     
     }
 }

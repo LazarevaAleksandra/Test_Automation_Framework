@@ -2,13 +2,23 @@
 using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Helper;
+using Epam_TestAutomation_Core.Utils;
+using Epam_TestAutomation_TestData.JoinOurTeamInfo;
 using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class JoinOurTeamPages : BasePage
     {
+        private SearchResultPages _searchResult;
+
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+
+        public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
+
+        public Link CareerButton => new Link(By.XPath("//*[@href = '/careers']"));
+
+        public Button JobListingsButton => new Button(By.XPath("//*[@href = '/careers/job-listings']"));
 
         public TextInput KeywordInput => new(By.XPath("//*[@id='new_form_job_search_1445745853_copy-keyword']"));
 
@@ -22,16 +32,22 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Label SkillsLabel => new Label(By.XPath("//*[@class='default-label']"));
 
+        public Label SkillFilter => new Label(By.XPath("//*[@class='filter-tag']"));
+
         public Checkbox SkillsCheckBox(string skill) => new Checkbox(By.XPath($"//*[@class='checkbox-custom-label'][contains(text(), '{skill}')]"));
 
-        public MainPage? _mainPage;
+        public Label ErrorMessage => new Label(By.XPath("//*[@class='search-result__error-message' and @role ='alert']"));
+
+        public JoinOurTeamPages()
+        {
+            _searchResult = new SearchResultPages();
+        }
 
         public JoinOurTeamPages JoinOurTeamPagesIsOpened()
         {
-            var career = _mainPage.CareerButton;
-            BrowserFactory.Browser.Action.MoveToElement(career.OriginalWebElement);
-            BrowserFactory.Browser.Action.Perform();
-            _mainPage.JobListingsButton.Click();
+            CareerButton.MoveToElement();
+            Waiters.WaitForCondition(CareersBlog.IsDisplayed);
+            JobListingsButton.Click();
 
             return new JoinOurTeamPages();
         }
@@ -40,6 +56,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         {
             KeywordInput.SendKeys(keyword);
             FindButton.Click();
+            Waiters.WaitForCondition(_searchResult.SearchResultTitle.IsDisplayed);
 
             return new JoinOurTeamPages();
         }
@@ -56,8 +73,11 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         public JoinOurTeamPages GetSkillKeyword(string keyword)
         {
             SkillsLabel.Click();
+            Thread.Sleep(2000);
             SkillsCheckBox(keyword).Click();
+            Waiters.WaitForCondition(SkillFilter.IsDisplayed);
             FindButton.Click();
+           
 
             return new JoinOurTeamPages();
         }
@@ -66,9 +86,11 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         {
             KeywordInput.SendKeys(profession);
             LocationDropdown.Click();
+            Thread.Sleep(2000);
             LocationInput.SendKeys(location);
             CitiesLineButton.Click();
             SkillsLabel.Click();
+            Thread.Sleep(2000);
             SkillsCheckBox(skill).Click();
             FindButton.Click();
 
@@ -79,11 +101,16 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         {
             KeywordInput.SendKeys(profession);
             LocationDropdown.Click();
+            Thread.Sleep(2000);
             LocationInput.SendKeys(location);
             CitiesLineButton.Click();
             FindButton.Click();
 
             return new JoinOurTeamPages();
         }
+
+        public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();
+
+        public string ActualErrorMessage() => ErrorMessage.GetAttribute("innerText");
     }
 }

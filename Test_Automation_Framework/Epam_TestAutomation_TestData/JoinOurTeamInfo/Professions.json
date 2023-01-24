@@ -1,11 +1,8 @@
 [
   {
-    "keywordProfessions": "manager"
+    "keywordProfession": "manager"
   },
   {
-    "keywordProfessions": "junior"
-  },
-  {
-    "keywordProfessions": "android"
+    "keywordProfession": "android"
   }
 ]

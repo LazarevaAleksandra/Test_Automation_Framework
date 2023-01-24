@@ -8,11 +8,13 @@ namespace Epam_TestAutomation_Tests
     public class Basic2_EpamSiteNavigateTests : BaseTest
     {
         private MainPage _mainPage;
+        private SearchResultPages _searchResultPages;
 
         [SetUp]
         public void SetUp()
         {
             _mainPage = new MainPage();
+            _searchResultPages = new SearchResultPages();
         }
 
         [Test]
@@ -35,7 +37,7 @@ namespace Epam_TestAutomation_Tests
             _mainPage.SearchButton.Click();
             _mainPage.FormSearch.SendKeys("Automation");
             _mainPage.HeaderSearchButton.Click();
-            var articles = _mainPage.Articles.GetElements().Take(5).Select(item => item.Text);
+            var articles = _searchResultPages.Articles.GetElements().Take(5).Select(item => item.Text);
 
             Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkAutomation), "Incorrect url is present!");
             Assert.That(articles, Is.All.Contain("Automation").IgnoreCase, "This word is not in the article!");
@@ -52,9 +54,9 @@ namespace Epam_TestAutomation_Tests
 
             Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkBusinessAnalysis), "Incorrect url is present!");
 
-            var title = _mainPage.Title.GetAttribute("innerText");
-            var titleOfTheFirstArticle = _mainPage.TitleOfTheFirstArticle;
-            _mainPage.OnetrustAcceptButton.Click();
+            var title = _searchResultPages.Title.GetAttribute("innerText");
+            var titleOfTheFirstArticle = _searchResultPages.Title;
+            _mainPage.OneTrustAcceptButton.Click();
             titleOfTheFirstArticle.Click();
             var titleBusinessAnalysis = _mainPage.TitleBusinessAnalysis.GetAttribute("innerText");
 
