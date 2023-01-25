@@ -3,7 +3,6 @@ using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Helper;
 using Epam_TestAutomation_Core.Utils;
-using Epam_TestAutomation_TestData.JoinOurTeamInfo;
 using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
@@ -13,8 +12,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         private SearchResultPages _searchResult;
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
-
-        public void JoinOurTeamUrlIsOpened() => BrowserFactory.Browser.GoToUrl(TestSettings.JoinOurTeamUrl);
 
         public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
 

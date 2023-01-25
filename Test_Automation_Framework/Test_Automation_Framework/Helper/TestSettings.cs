@@ -1,6 +1,4 @@
 ﻿using Epam_TestAutomation_Core.Enum;
-using Epam_TestAutomation_TestData.JoinOurTeamInfo;
-using Epam_TestAutomation_Utilities.Json;
 using Epam_TestAutomation_Utilities.Utils;
 using NUnit.Framework;
 
@@ -22,6 +20,6 @@ namespace Epam_TestAutomation_Core.Helper
 
         public static string ApplicationUrl => TestContext.Parameters.Get("ApplicationUrl").ToString();
 
-        public static string JoinOurTeamUrl => TestContext.Parameters.Get("JoinOurTeamUrl").ToString();
+        public static string InsightsUrl => TestContext.Parameters.Get("InsightsUrl").ToString();
     }
 }

@@ -20,22 +20,22 @@ namespace Epam_TestAutomation_BDD.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("DataEntryForJobSearchTests")]
-    public partial class DataEntryForJobSearchTestsFeature
+    [NUnit.Framework.DescriptionAttribute("DataEntryForJobSearch")]
+    public partial class DataEntryForJobSearchFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-#line 1 "DataEntryForJobSearchTests.feature"
+#line 1 "DataEntryForJobSearch.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "DataEntryForJobSearchTests", "As a interested user in EPAM company\r\nI want to be able to search for jobs by key" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "DataEntryForJobSearch", "As a user interested in EPAM Company\r\nI want to be able to search for jobs by key" +
                     "words\r\nIn order to apply for a job", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -75,13 +75,15 @@ namespace Epam_TestAutomation_BDD.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("JoinOurTeam Page - Check Profession By Keyword")]
+        [NUnit.Framework.DescriptionAttribute("Epam Site - JoinOurTeam Page - Check Profession By Keyword")]
+        [NUnit.Framework.CategoryAttribute("Profession")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("manager", null)]
         [NUnit.Framework.TestCaseAttribute("android", null)]
-        public void JoinOurTeamPage_CheckProfessionByKeyword(string profession, string[] exampleTags)
+        public void EpamSite_JoinOurTeamPage_CheckProfessionByKeyword(string profession, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Profession",
                     "Smoke"};
             if ((exampleTags != null))
             {
@@ -90,8 +92,8 @@ namespace Epam_TestAutomation_BDD.Features
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("profession", profession);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("JoinOurTeam Page - Check Profession By Keyword", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Epam Site - JoinOurTeam Page - Check Profession By Keyword", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -101,13 +103,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
  testRunner.Given("The join our team page is opened from the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 10
  testRunner.When(string.Format("Enter profession {0}", profession), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then(string.Format("The result that contains the {0} is displayed on the page", profession), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -115,13 +117,15 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("JoinOurTeam Page - Check Location By Keyword")]
+        [NUnit.Framework.DescriptionAttribute("Epam Site - JoinOurTeam Page - Check Location By Keyword")]
+        [NUnit.Framework.CategoryAttribute("Location")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("Yerevan", null)]
         [NUnit.Framework.TestCaseAttribute("Copenhagen", null)]
-        public void JoinOurTeamPage_CheckLocationByKeyword(string location, string[] exampleTags)
+        public void EpamSite_JoinOurTeamPage_CheckLocationByKeyword(string location, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Location",
                     "Smoke"};
             if ((exampleTags != null))
             {
@@ -130,8 +134,8 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("location", location);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("JoinOurTeam Page - Check Location By Keyword", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 18
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Epam Site - JoinOurTeam Page - Check Location By Keyword", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 20
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -141,13 +145,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 19
+#line 21
  testRunner.Given("The join our team page is opened from the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 20
+#line 22
  testRunner.When(string.Format("Enter location {0}", location), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 21
+#line 23
  testRunner.Then(string.Format("The result that contains the {0} is displayed on the page", location), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -155,13 +159,15 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("JoinOurTeam Page - Check Skill By Keyword")]
+        [NUnit.Framework.DescriptionAttribute("Epam Site - JoinOurTeam Page - Check Skill By Keyword")]
+        [NUnit.Framework.CategoryAttribute("Skill")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("Business and Data Analysis", null)]
         [NUnit.Framework.TestCaseAttribute("Software, System, and Test Engineering", null)]
-        public void JoinOurTeamPage_CheckSkillByKeyword(string skill, string[] exampleTags)
+        public void EpamSite_JoinOurTeamPage_CheckSkillByKeyword(string skill, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Skill",
                     "Smoke"};
             if ((exampleTags != null))
             {
@@ -170,8 +176,8 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("skill", skill);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("JoinOurTeam Page - Check Skill By Keyword", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 29
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Epam Site - JoinOurTeam Page - Check Skill By Keyword", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -181,13 +187,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 30
+#line 33
  testRunner.Given("The join our team page is opened from the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 31
+#line 34
  testRunner.When(string.Format("Enter skill {0}", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 35
  testRunner.Then(string.Format("The result that contains the {0} is displayed on the page", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

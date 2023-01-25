@@ -1,10 +1,11 @@
-﻿Feature: DataEntryForJobSearchTests
-As a interested user in EPAM company
+﻿Feature: DataEntryForJobSearch
+As a user interested in EPAM Company
 I want to be able to search for jobs by keywords
 In order to apply for a job
 
+@Profession
 @Smoke
-Scenario Outline: JoinOurTeam Page - Check Profession By Keyword
+Scenario Outline: Epam Site - JoinOurTeam Page - Check Profession By Keyword
 	Given The join our team page is opened from the main page
 	When Enter profession <profession>
 	Then The result that contains the <profession> is displayed on the page 
@@ -14,8 +15,9 @@ Scenario Outline: JoinOurTeam Page - Check Profession By Keyword
     | manager |
     | android |
 
+@Location
 @Smoke
-Scenario Outline: JoinOurTeam Page - Check Location By Keyword
+Scenario Outline: Epam Site - JoinOurTeam Page - Check Location By Keyword
 	Given The join our team page is opened from the main page
 	When Enter location <location>
 	Then The result that contains the <location> is displayed on the page 
@@ -25,8 +27,9 @@ Scenario Outline: JoinOurTeam Page - Check Location By Keyword
 	| Yerevan    |
 	| Copenhagen |
 
+@Skill
 @Smoke
-Scenario Outline: JoinOurTeam Page - Check Skill By Keyword
+Scenario Outline: Epam Site - JoinOurTeam Page - Check Skill By Keyword
 	Given The join our team page is opened from the main page
 	When Enter skill <skill>
 	Then The result that contains the <skill> is displayed on the page 
