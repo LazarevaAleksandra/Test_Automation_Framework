@@ -4,8 +4,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-#C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_Tests\Screenshots
-
 # User-specific files
 *.rsuser
 *.suo
@@ -33,6 +31,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
+*.txt
+Screenshots/
+*.jpeg
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/

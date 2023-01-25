@@ -9,10 +9,13 @@ namespace Epam_TestAutomation_Tests
     {
         private MainPage _mainPage;
 
+        private SearchResultPages _searchResultPages;
+
         [SetUp]
         public void SetUp()
         {
             _mainPage = new MainPage();
+            _searchResultPages = new SearchResultPages();
         }
 
         [Test]
@@ -57,7 +60,7 @@ namespace Epam_TestAutomation_Tests
             _mainPage.FrequentList.Click();
             _mainPage.HeaderSearchButton.Click();
             BrowserFactory.Browser.Action.ScrollToElement(_mainPage.SearchFooter.OriginalWebElement).Perform();
-            var actualResult = _mainPage.Articles.GetElements();
+            var actualResult = _searchResultPages.Articles.GetElements();
 
             Assert.That(actualResult, Has.Count.EqualTo(expectedResult), "Incorrect number of articles on the site!");
         }

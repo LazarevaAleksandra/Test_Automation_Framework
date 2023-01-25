@@ -14,6 +14,8 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
 
+        public void JoinOurTeamUrlIsOpened() => BrowserFactory.Browser.GoToUrl(TestSettings.JoinOurTeamUrl);
+
         public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
 
         public Link CareerButton => new Link(By.XPath("//*[@href = '/careers']"));
@@ -78,7 +80,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             Waiters.WaitForCondition(SkillFilter.IsDisplayed);
             FindButton.Click();
            
-
             return new JoinOurTeamPages();
         }
 
