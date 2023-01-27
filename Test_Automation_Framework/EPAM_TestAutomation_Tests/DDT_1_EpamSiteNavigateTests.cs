@@ -1,5 +1,4 @@
 ﻿using Epam_TestAutomation_BusinessLogic.PageObjects.Pages;
-using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Helper;
 using Epam_TestAutomation_TestData.JoinOurTeamInfo;
 using NUnit.Framework;
