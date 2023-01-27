@@ -107,10 +107,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The join our team page is opened from the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.When(string.Format("Enter profession {0}", profession), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Enter the profession {0} in the Keyword field", profession), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then(string.Format("The result that contains the {0} is displayed on the page", profession), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("The result that contains the {0} is displayed on the JoinOurTeam page", profession), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -149,10 +149,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The join our team page is opened from the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 22
- testRunner.When(string.Format("Enter location {0}", location), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Enter the location {0} in the All Locations field", location), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
- testRunner.Then(string.Format("The result that contains the {0} is displayed on the page", location), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("The result that contains the {0} is displayed on the JoinOurTeam page", location), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -191,10 +191,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("The join our team page is opened from the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 34
- testRunner.When(string.Format("Enter skill {0}", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("Enter the skill {0} in the All Skills field", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
- testRunner.Then(string.Format("The result that contains the {0} is displayed on the page", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("The result that contains the {0} is displayed on the JoinOurTeam page", skill), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

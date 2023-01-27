@@ -8,19 +8,17 @@ namespace Epam_TestAutomation_BDD.Steps
     [Binding]
     public class InsightsSteps
     {
-        private MainPage _mainPage;
         private InsightsPage _insightsPage;
 
         public InsightsSteps()
-        {
-            _mainPage = new MainPage();
+        {          
             _insightsPage = new InsightsPage();
         }
 
         [Given(@"I navigate to Epam site")]
         public void GivenINavigateToEpamSite()
         {
-            _mainPage.IsOpened();
+            _insightsPage.ManePageIsOpened();
             Waiters.WaitForPageLoad();
         }
 

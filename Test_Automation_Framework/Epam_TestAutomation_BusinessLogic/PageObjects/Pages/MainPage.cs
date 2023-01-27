@@ -8,8 +8,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class MainPage : BasePage
     {
-        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
-
         public Label OurOfficesCareer => new Label(By.XPath("//*[@class='tabs__ul js-tabs-links-list']"));
 
         public Button CareerButton => new Button(By.XPath("//*[@href = '/careers']"));
@@ -35,6 +33,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         public ElementList ListOfLanguages = new ElementList(By.XPath("//*[@class = 'location-selector__item']"));
 
         public ElementList CareerElementsList = new ElementList(By.XPath(".//div"));
-    }   
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+    }
 }
 

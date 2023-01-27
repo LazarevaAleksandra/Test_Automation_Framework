@@ -8,8 +8,10 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class InsightsPage : BasePage
     {
+        public Link Insights = new Link(By.XPath("//*[@href = '/insights']"));
+
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.InsightsUrl);
 
-        public Link Insights = new Link(By.XPath("//*[@href = '/insights']"));
+        public bool ManePageIsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
     }
 }

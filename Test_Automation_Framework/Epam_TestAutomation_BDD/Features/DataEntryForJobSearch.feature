@@ -7,8 +7,8 @@ In order to apply for a job
 @Smoke
 Scenario Outline: Epam Site - JoinOurTeam Page - Check Profession By Keyword
 	Given The join our team page is opened from the main page
-	When Enter profession <profession>
-	Then The result that contains the <profession> is displayed on the page 
+	When Enter the profession <profession> in the Keyword field
+	Then The result that contains the <profession> is displayed on the JoinOurTeam page 
 
     Examples:    
     | profession |
@@ -19,8 +19,8 @@ Scenario Outline: Epam Site - JoinOurTeam Page - Check Profession By Keyword
 @Smoke
 Scenario Outline: Epam Site - JoinOurTeam Page - Check Location By Keyword
 	Given The join our team page is opened from the main page
-	When Enter location <location>
-	Then The result that contains the <location> is displayed on the page 
+	When Enter the location <location> in the All Locations field
+	Then The result that contains the <location> is displayed on the JoinOurTeam page 
 
 	Examples: 
 	| location   |
@@ -31,8 +31,8 @@ Scenario Outline: Epam Site - JoinOurTeam Page - Check Location By Keyword
 @Smoke
 Scenario Outline: Epam Site - JoinOurTeam Page - Check Skill By Keyword
 	Given The join our team page is opened from the main page
-	When Enter skill <skill>
-	Then The result that contains the <skill> is displayed on the page 
+	When Enter the skill <skill> in the All Skills field
+	Then The result that contains the <skill> is displayed on the JoinOurTeam page 
 
 	Examples: 
 	| skill                                  |

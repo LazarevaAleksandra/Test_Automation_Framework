@@ -8,11 +8,7 @@ using OpenQA.Selenium;
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class JoinOurTeamPages : BasePage
-    {
-        private SearchResultPages _searchResult;
-
-        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
-
+    {     
         public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
 
         public Link CareerButton => new Link(By.XPath("//*[@href = '/careers']"));
@@ -37,10 +33,9 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Label ErrorMessage => new Label(By.XPath("//*[@class='search-result__error-message' and @role ='alert']"));
 
-        public JoinOurTeamPages()
-        {
-            _searchResult = new SearchResultPages();
-        }
+        public Label SearchResultTitle => new Label(By.XPath("//*[@class='search-result__heading']"));
+
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
 
         public JoinOurTeamPages JoinOurTeamPagesIsOpened()
         {
@@ -55,7 +50,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         {
             KeywordInput.SendKeys(keyword);
             FindButton.Click();
-            Waiters.WaitForCondition(_searchResult.SearchResultTitle.IsDisplayed);
+            Waiters.WaitForCondition(SearchResultTitle.IsDisplayed);
 
             return new JoinOurTeamPages();
         }
