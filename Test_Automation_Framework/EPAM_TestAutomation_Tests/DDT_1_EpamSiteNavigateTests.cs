@@ -18,7 +18,6 @@ namespace Epam_TestAutomation_Tests
         private static List<JoinOurTeamFilters> GetFiltersNames() => TestDataSettings.FiltersNames;
         private static List<ErrorMessage> ErrorMessagesNames() => TestDataSettings.ErrorMessages;
 
-
         [SetUp]
         public void SetUp()
         {
@@ -30,7 +29,7 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(GetProfessionsNames))]
         public void CheckKeywordInProfessionResultTest(Professions keyword)
         {
-            _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetProfessionKeyword(keyword.ProfessionKeyword);
+            _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetProfessionKeyword(keyword.ProfessionKeyword, );
             var result = _searchResultPages.GetResultsKeyword(keyword.ProfessionKeyword);
 
             Assert.That(result, Is.True, "This profession was not found!");

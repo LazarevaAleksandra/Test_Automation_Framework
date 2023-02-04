@@ -32,7 +32,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Label SkillFilter => new Label(By.XPath("//*[@class='filter-tag']"));
 
-        public Dropdown SkillsDropdown => new Dropdown(By.XPath("//*[@class='multi-select-dropdown' and @aria-hidden='false']"));
+        public Dropdown SkillsDropdown => new Dropdown(By.XPath("//*[@class='multi-select-dropdown']"));
 
         public Checkbox SkillsCheckBox(string skill) => new Checkbox(By.XPath($"//*[@class='checkbox-custom-label'][contains(text(), '{skill}')]"));
 
@@ -40,7 +40,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Label SearchResultTitle => new Label(By.XPath("//*[@class='search-result__heading']"));
 
-        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
 
         public JoinOurTeamPages JoinOurTeamPagesIsOpened()
         {
@@ -76,7 +76,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             SkillsCheckBox(keyword).Click();
             Waiters.WaitForCondition(SkillFilter.IsDisplayed);
             FindButton.Click();
-           
+
 
             return new JoinOurTeamPages();
         }
