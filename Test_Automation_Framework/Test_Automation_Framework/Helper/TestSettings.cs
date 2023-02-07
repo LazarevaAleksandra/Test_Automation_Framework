@@ -19,5 +19,9 @@ namespace Epam_TestAutomation_Core.Helper
         public static string DefaultTimeOut => TestContext.Parameters.Get("WaitElementTimeOut").ToString();
 
         public static string ApplicationUrl => TestContext.Parameters.Get("ApplicationUrl").ToString();
+
+        public static string InsightsUrl => TestContext.Parameters.Get("InsightsUrl").ToString();
+
+        public static string JoinOurTeamUrl => TestContext.Parameters.Get("JoinOurTeamUrl").ToString();
     }
 }

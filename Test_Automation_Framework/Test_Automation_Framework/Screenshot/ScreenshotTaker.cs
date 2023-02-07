@@ -1,6 +1,5 @@
 ﻿using Epam_TestAutomation_Core.Helper;
 using OpenQA.Selenium;
-using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 

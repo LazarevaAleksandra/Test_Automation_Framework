@@ -1,6 +1,6 @@
 ﻿using Epam_TestAutomation_Core.Browser;
-using Epam_TestAutomation_Core.Driver;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System.Collections.ObjectModel;
 using System.Drawing;
 
@@ -59,6 +59,16 @@ namespace Epam_TestAutomation_Core.Elements
         public IWebElement FindElement(By by) => OriginalWebElement.FindElement(by);
 
         public ReadOnlyCollection<IWebElement> FindElements(By by) => OriginalWebElement.FindElements(by);
+
+        public Actions Actions()
+        {
+            return BrowserFactory.Browser.Action;
+        }
+
+        public void MoveToElement()
+        {
+            BrowserFactory.Browser.Action.MoveToElement(OriginalWebElement).Perform();
+        }
     }
 }
        
