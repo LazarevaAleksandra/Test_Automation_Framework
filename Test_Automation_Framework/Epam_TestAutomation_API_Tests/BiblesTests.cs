@@ -37,5 +37,18 @@ namespace Epam_TestAutomation_API_Tests
             Assert.That(response.Response.StatusCode, Is.EqualTo(HttpStatusCode.Unauthorized),
                 "Invalid status code was returned while sending GET request to /v1/audio-bibles without authorization!");
         }
+
+        #region Books
+        [Test]
+        public void CheckThatChaptersAreNotEmptyTest()
+        {
+            var bibles = new BiblesController(new CustomRestClient()).GetBibles<AllBiblesModel>().Bibles.data; 
+            var books = new BiblesController(new CustomRestClient()).GetBook<AllBooksModels>(bibles.First().id).Books.data;
+            var bookVersion = new BiblesController(new CustomRestClient()).GetBooks<AllBooksModels>(books.First().id).Books.data;
+            var chapters = new BiblesController(new CustomRestClient()).GetChapters<List<Chapters>>(bookVersion.First().id).Books;
+
+            Assert.IsTrue(chapters.Any(), "Book chapters are empty!");
+        }
+        #endregion
     }
 }
