@@ -70,15 +70,14 @@ namespace Epam_TestAutomation_API.Controllers
             return Get<T>(string.Format(BooksResourse, id));
         }
 
-
         /// <summary>
         /// Request that receive chapters of book
         /// </summary>
         /// <typeparam name="T"><see cref="Chapters"/></typeparam>
         /// <returns>response typeof <see cref="RestResponse"/> and <see cref="Chapters"/></returns>
-        public (RestResponse Response, T? Chapters) GetChapters<T>(string id, string id1)
+        public (RestResponse Response, T? Chapters) GetChapters<T>(string biblesId, string bookId)
         {
-            return Get<T>(string.Format(SingleBooksResourse, id, id1));
+            return Get<T>(string.Format(SingleBooksResourse, biblesId, bookId));
         }
 
         #endregion
