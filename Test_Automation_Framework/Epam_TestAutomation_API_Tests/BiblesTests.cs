@@ -42,10 +42,11 @@ namespace Epam_TestAutomation_API_Tests
         [Test]
         public void CheckThatChaptersAreNotEmptyTest()
         {
-            var bibles = new BiblesController(new CustomRestClient()).GetBibles<AllBiblesModel>().Bibles.data; 
-            var books = new BiblesController(new CustomRestClient()).GetBook<AllBooksModels>(bibles.First().id).Books.data;
-            var bookVersion = new BiblesController(new CustomRestClient()).GetBooks<AllBooksModels>(books.First().id).Books.data;
-            var chapters = new BiblesController(new CustomRestClient()).GetChapters<List<Chapters>>(bookVersion.First().id).Books;
+            var bibles = new BiblesController(new CustomRestClient()).GetBibles<AllBiblesModel>().Bibles.data;
+            var biblesId = bibles.First().id;
+            var book = new BiblesController(new CustomRestClient()).GetBook<SingleBible>(biblesId).Books.data;
+            var bookVersion = new BiblesController(new CustomRestClient()).GetBooks<AllBooksModels>(book.id).Books.data;
+            var chapters = new BiblesController(new CustomRestClient()).GetChapters<Chapters>(biblesId ,bookVersion.First().id).Chapters.data;
 
             Assert.IsTrue(chapters.Any(), "Book chapters are empty!");
         }

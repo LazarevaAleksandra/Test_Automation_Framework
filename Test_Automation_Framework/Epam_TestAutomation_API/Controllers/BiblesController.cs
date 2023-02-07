@@ -16,7 +16,7 @@ namespace Epam_TestAutomation_API.Controllers
         private const string AudioBiblesResource = "/v1/audio-bibles";
         private const string SingleAudioBiblesResource = "/v1/audio-bibles/{0}";
         private const string BooksResourse = "/v1/bibles/{0}/books";
-        private const string SingleBooksResourse = "/v1/bibles/{0}/books/{0}/chapters";
+        private const string SingleBooksResourse = "/v1/bibles/{0}/books/{1}/chapters";
 
         /// <summary>
         /// Request that receive all list of bibles
@@ -53,8 +53,8 @@ namespace Epam_TestAutomation_API.Controllers
         /// <summary>
         /// Request that receive book
         /// </summary>
-        /// <typeparam name="T"><see cref="AllBooksModels"/></typeparam>
-        /// <returns>response typeof <see cref="RestResponse"/> and <see cref="AllBooksModels"/></returns>
+        /// <typeparam name="T"><see cref="SingleBible"/></typeparam>
+        /// <returns>response typeof <see cref="RestResponse"/> and <see cref="SingleBible"/></returns>
         public (RestResponse Response, T? Books) GetBook<T>(string id)
         {
             return Get<T>(string.Format(SingleBiblesResource, id));
@@ -74,11 +74,11 @@ namespace Epam_TestAutomation_API.Controllers
         /// <summary>
         /// Request that receive chapters of book
         /// </summary>
-        /// <typeparam name="T"><see cref="AllBooksModels"/></typeparam>
-        /// <returns>response typeof <see cref="RestResponse"/> and <see cref="AllBooksModels"/></returns>
-        public (RestResponse Response, T? Books) GetChapters<T>(string id)
+        /// <typeparam name="T"><see cref="Chapters"/></typeparam>
+        /// <returns>response typeof <see cref="RestResponse"/> and <see cref="Chapters"/></returns>
+        public (RestResponse Response, T? Chapters) GetChapters<T>(string id, string id1)
         {
-            return Get<T>(string.Format(SingleBooksResourse, id));
+            return Get<T>(string.Format(SingleBooksResourse, id, id1));
         }
 
         #endregion
