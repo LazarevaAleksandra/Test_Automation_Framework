@@ -3,7 +3,7 @@ using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Helper;
 using Epam_TestAutomation_Core.Utils;
-using Epam_TestAutomation_TestData.JoinOurTeamInfo;
+using Epam_TestAutomation_Utilities.Logger;
 using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
@@ -42,71 +42,50 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
 
-        public JoinOurTeamPages JoinOurTeamPagesIsOpened()
+        public void JoinOurTeamPagesIsOpened()
         {
             CareerButton.MoveToElement();
             Waiters.WaitForCondition(CareersBlog.IsDisplayed);
             JobListingsButton.Click();
-
-            return new JoinOurTeamPages();
         }
 
-        public JoinOurTeamPages GetProfessionKeyword(string keyword)
+        public void GetSearchFilters(string profession = null, string location = null, string skill = null)
         {
-            KeywordInput.SendKeys(keyword);
-            FindButton.Click();
-            Waiters.WaitForCondition(SearchResultTitle.IsDisplayed);
+            if (!string.IsNullOrEmpty(profession))
+            {
+                KeywordInput.SendKeys(profession);
+            }
 
-            return new JoinOurTeamPages();
-        }
+            if (!string.IsNullOrEmpty(location))
+            {
+                LocationDropdown.Click();
+                LocationInput.SendKeys(location);
+                CitiesLineButton.Click();
+            }
 
-        public JoinOurTeamPages GetLocationKeyword(string keyword)
-        {
-            LocationDropdown.Click();
-            LocationInput.SendKeys(keyword);
-            CitiesLineButton.Click();
+            if (!string.IsNullOrEmpty(skill))
+            {
+                SkillsLabel.Click();
+                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));
+                var errorMessageDisplayed = false;
+                try
+                {
+                    ErrorMessageDisplayed();
+                    errorMessageDisplayed = true;
+                }
+                catch (NoSuchElementException ex)
+                {
+                    Logger.Info("Error message is not displayed!");
+                    SkillsCheckBox(skill).Click();
+                    FindButton.Click();
+                }
 
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetSkillKeyword(string keyword)
-        {
-            SkillsLabel.Click();
-            Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));
-            SkillsCheckBox(keyword).Click();
-            Waiters.WaitForCondition(SkillFilter.IsDisplayed);
-            FindButton.Click();
-
-
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetSearchFilters(string profession, string location, string skill)
-        {
-            KeywordInput.SendKeys(profession);
-            LocationDropdown.Click();
-            Waiters.WaitForCondition(DropdownLocations.IsDisplayed);
-            LocationInput.SendKeys(location);
-            CitiesLineButton.Click();
-            SkillsLabel.Click();
-            Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));
-            SkillsCheckBox(skill).Click();
-            FindButton.Click();
-
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetErrorMessage(string profession, string location)
-        {
-            KeywordInput.SendKeys(profession);
-            LocationDropdown.Click();
-            Waiters.WaitForCondition(DropdownLocations.IsDisplayed);
-            LocationInput.SendKeys(location);
-            CitiesLineButton.Click();
-            FindButton.Click();
-
-            return new JoinOurTeamPages();
-        }
+                if (errorMessageDisplayed.Equals(true))
+                {
+                    FindButton.Click();
+                }
+            }
+        }     
 
         public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();
 

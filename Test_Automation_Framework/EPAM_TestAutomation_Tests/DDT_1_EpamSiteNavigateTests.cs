@@ -29,7 +29,8 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(GetProfessionsNames))]
         public void CheckKeywordInProfessionResultTest(Professions keyword)
         {
-            _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetProfessionKeyword(keyword.ProfessionKeyword, );
+            _joinOurTeamPages.JoinOurTeamPagesIsOpened();
+            _joinOurTeamPages.GetSearchFilters(keyword.ProfessionKeyword);
             var result = _searchResultPages.GetResultsKeyword(keyword.ProfessionKeyword);
 
             Assert.That(result, Is.True, "This profession was not found!");
@@ -39,7 +40,8 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(GetLocationsNames))]
         public void CheckKeywordInLocationResultTest(Locations keyword)
         {
-            _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetLocationKeyword(keyword.LocationKeyword);
+            _joinOurTeamPages.JoinOurTeamPagesIsOpened();
+            _joinOurTeamPages.GetSearchFilters(keyword.LocationKeyword);
             var result = _searchResultPages.GetResultsKeyword(keyword.LocationKeyword);
 
             Assert.That(result, Is.True, "This location was not found!");
@@ -49,7 +51,8 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(GetSkillsNames))]
         public void CheckKeywordInSkillResultTest(Skills keyword)
         {
-            _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetSkillKeyword(keyword.SkillKeyword);
+            _joinOurTeamPages.JoinOurTeamPagesIsOpened();
+            _joinOurTeamPages.GetSearchFilters(keyword.SkillKeyword);
             var result = _searchResultPages.GetResultsKeyword(keyword.SkillKeyword);
 
             Assert.That(result, Is.True, "This skill was not found!");
@@ -59,7 +62,8 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(GetFiltersNames))]
         public void CheckFiltersResultTest(JoinOurTeamFilters filter)
         {
-            _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetSearchFilters(filter.Profession, filter.Location, filter.Skill);
+            _joinOurTeamPages.JoinOurTeamPagesIsOpened();
+            _joinOurTeamPages.GetSearchFilters(filter.Profession, filter.Location, filter.Skill);
             var resultProfession = _searchResultPages.GetResultsKeyword(filter.Profession);
             var resultLocation = _searchResultPages.GetResultsKeyword(filter.Location);
             var resultSkill = _searchResultPages.GetResultsKeyword(filter.Skill);
@@ -73,7 +77,9 @@ namespace Epam_TestAutomation_Tests
         [TestCaseSource(nameof(ErrorMessagesNames))]
         public void CheckErrorMessageResultTest(ErrorMessage error)
         {
-            var resultErrorMessage = _joinOurTeamPages.JoinOurTeamPagesIsOpened().GetErrorMessage(error.ProfessionName, error.LocationName).ErrorMessageDisplayed();
+            _joinOurTeamPages.JoinOurTeamPagesIsOpened();
+            _joinOurTeamPages.GetSearchFilters(error.ProfessionName, error.LocationName);
+            var resultErrorMessage = _joinOurTeamPages.ErrorMessageDisplayed();
             var expResultErrorMessage = "Sorry, your search returned no results. Please try another combination.";
             var actResultErrorMessage = _joinOurTeamPages.ActualErrorMessage();
         
