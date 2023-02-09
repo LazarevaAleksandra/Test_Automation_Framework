@@ -23,7 +23,7 @@ namespace Epam_TestAutomation_API_Tests
         public void CheckSinglePhonesResponseTest()
         {
             var phone = new PhoneController(new CustomRestClient()).GetPhones<List<AllPhonesModels>>();
-            var listOfPhone = phone.Phones.ToList();
+            var listOfPhone = phone.Phone.ToList();
             var receivedPhone = new PhoneController(new CustomRestClient())
                 .GetPhonesID<List<AllPhonesModels>>(listOfPhone.Select(item => item.id).Last());
 
