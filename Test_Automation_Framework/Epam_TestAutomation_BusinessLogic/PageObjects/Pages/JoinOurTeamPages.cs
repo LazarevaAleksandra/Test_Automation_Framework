@@ -49,7 +49,7 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             JobListingsButton.Click();
         }
 
-        public void GetSearchFilters(string profession = null, string location = null, string skill = null)
+        public void FillInSearchFilter(string profession = null, string location = null, string skill = null)
         {
             if (!string.IsNullOrEmpty(profession))
             {
@@ -66,26 +66,11 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             if (!string.IsNullOrEmpty(skill))
             {
                 SkillsLabel.Click();
-                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));
-                var errorMessageDisplayed = false;
-                try
-                {
-                    ErrorMessageDisplayed();
-                    errorMessageDisplayed = true;
-                }
-                catch (NoSuchElementException ex)
-                {
-                    Logger.Info("Error message is not displayed!");
-                    SkillsCheckBox(skill).Click();
-                    FindButton.Click();
-                }
-
-                if (errorMessageDisplayed.Equals(true))
-                {
-                    FindButton.Click();
-                }
+                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));               
+                SkillsCheckBox(skill).Click();              
             }
-        }     
+            FindButton.Click();
+        }
 
         public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();
 
