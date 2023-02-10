@@ -10,6 +10,8 @@ namespace Epam_TestAutomation_Tests
         private MainPage _mainPage;
         private SearchResultPages _searchResultPages;
 
+        private SearchResultPages _searchResultPages;
+
         [SetUp]
         public void SetUp()
         {

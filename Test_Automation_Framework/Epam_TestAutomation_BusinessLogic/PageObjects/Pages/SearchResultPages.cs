@@ -2,7 +2,6 @@
 using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Helper;
-using Epam_TestAutomation_TestData.JoinOurTeamInfo;
 using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
@@ -22,6 +21,10 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             var result = ResultsList.GetElements().Select(item => item.GetAttribute("innerText").Contains(keyword));
 
             return result.Any();
+
         }       
+
+        }        
+
     }
 }

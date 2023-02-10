@@ -3,13 +3,20 @@ using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Helper;
 using Epam_TestAutomation_Core.Utils;
+
 using Epam_TestAutomation_Utilities.Logger;
+
+
 using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class JoinOurTeamPages : BasePage
+
     {
+
+    {     
+
         public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
 
         public Link CareerButton => new Link(By.XPath("//*[@href = '/careers']"));
@@ -40,14 +47,52 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Label SearchResultTitle => new Label(By.XPath("//*[@class='search-result__heading']"));
 
+
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
+
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+
 
         public void JoinOurTeamPagesIsOpened()
         {
             CareerButton.MoveToElement();
             Waiters.WaitForCondition(CareersBlog.IsDisplayed);
             JobListingsButton.Click();
+
+
+
+            return new JoinOurTeamPages();
         }
+
+        public JoinOurTeamPages GetProfessionKeyword(string keyword)
+        {
+            KeywordInput.SendKeys(keyword);
+            FindButton.Click();
+            Waiters.WaitForCondition(SearchResultTitle.IsDisplayed);
+
+            return new JoinOurTeamPages();
+        }
+
+        public JoinOurTeamPages GetLocationKeyword(string keyword)
+        {
+            LocationDropdown.Click();
+            LocationInput.SendKeys(keyword);
+            CitiesLineButton.Click();
+
+            return new JoinOurTeamPages();
+        }
+
+        public JoinOurTeamPages GetSkillKeyword(string keyword)
+        {
+            SkillsLabel.Click();
+            Thread.Sleep(2000);
+            SkillsCheckBox(keyword).Click();
+            Waiters.WaitForCondition(SkillFilter.IsDisplayed);
+            FindButton.Click();
+           
+            return new JoinOurTeamPages();
+
+}
 
         public void FillInSearchFilter(string profession = null, string location = null, string skill = null)
         {

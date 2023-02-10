@@ -7,6 +7,9 @@
 		<Parameter name ="ScreenShotPath" value="\Screenshots" />
 		<Parameter name ="LogsPath" value="Logs\Logs.txt" />
 		<Parameter name ="ApplicationUrl" value="https://www.epam.com/"/>
+
+		<Parameter name ="InsightsUrl" value="https://www.epam.com/insights"/>
+
 		<Parameter name ="JoinOurTeamUrl" value="https://www.epam.com/careers/job-listings"/>
 	</TestRunParameters>
 </RunSettings>
