@@ -8,6 +8,7 @@ namespace Epam_TestAutomation_Tests
     public class Advansed_EpamSiteNavigateTests : BaseTest
     {
         private MainPage _mainPage;
+        private SearchResultPages _searchResultPages;
 
         private SearchResultPages _searchResultPages;
 

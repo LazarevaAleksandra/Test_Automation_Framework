@@ -15,14 +15,14 @@ namespace Epam_TestAutomation_Core.Helper
 
         public static List<ErrorMessage> ErrorMessages => JsonParser.DeserializeJsonToObject<ErrorMessage>(PathErrorMessages);
 
-        public const string PathProfessions = @"C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_TestData\JoinOurTeamInfo\Professions.json";
+        public static string PathProfessions = Path.Join(Directory.GetCurrentDirectory(), @"JoinOurTeamInfo\Professions.json");
 
-        public const string PathLocations = @"C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_TestData\JoinOurTeamInfo\Locations.json";
+        public static string PathLocations = Path.Join(Directory.GetCurrentDirectory(), @"JoinOurTeamInfo\Locations.json");
 
-        public const string PathSkills = @"C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_TestData\JoinOurTeamInfo\Skills.json";
+        public static string PathSkills = Path.Join(Directory.GetCurrentDirectory(), @"JoinOurTeamInfo\Skills.json");
+         
+        public static string PathFilters = Path.Join(Directory.GetCurrentDirectory(), @"JoinOurTeamInfo\JoinOurTeam.json");
 
-        public const string PathFilters = @"C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_TestData\JoinOurTeamInfo\JoinOurTeam.json";
-
-        public const string PathErrorMessages = @"C:\Users\Sasha\Test_Automation_Framework\Test_Automation_Framework\Epam_TestAutomation_TestData\JoinOurTeamInfo\ErrorMessage.json";
+        public static string PathErrorMessages = Path.Join(Directory.GetCurrentDirectory(), @"JoinOurTeamInfo\ErrorMessage.json");
     }
 }
