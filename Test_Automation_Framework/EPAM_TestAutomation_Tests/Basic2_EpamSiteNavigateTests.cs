@@ -1,5 +1,6 @@
 ﻿using Epam_TestAutomation_BusinessLogic.PageObjects.Pages;
 using Epam_TestAutomation_Core.Browser;
+using Epam_TestAutomation_Core.Utils;
 using NUnit.Framework;
 
 namespace Epam_TestAutomation_Tests
@@ -20,9 +21,9 @@ namespace Epam_TestAutomation_Tests
         [Test]
         public void CheckTheListOfCountriesInTheCareerButtonTest()
         {
-            var countries = new List<string> { "AMERICAS", "EMEA", "APAC" };
-
-            _mainPage.CareerButton.Click();      
+            var countries = new List<string>() { "AMERICAS", "EMEA", "APAC" };
+           
+            _mainPage.CareerButton.Click();
             var careerElements = _mainPage.CareerElementsList.GetElements().Select(item => item.GetAttribute("innerText"));
 
             Assert.That(careerElements.Count(), Is.EqualTo(3), "Invalid number of countries!");

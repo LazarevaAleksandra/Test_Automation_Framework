@@ -69,6 +69,11 @@ namespace Epam_TestAutomation_Core.Elements
         {
             BrowserFactory.Browser.Action.MoveToElement(OriginalWebElement).Perform();
         }
+
+        public void ScrollToElement()
+        {
+            BrowserFactory.Browser.Action.ScrollToElement(OriginalWebElement).Perform();
+        }
     }
 }
        

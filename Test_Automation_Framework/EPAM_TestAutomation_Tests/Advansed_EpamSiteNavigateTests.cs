@@ -22,9 +22,7 @@ namespace Epam_TestAutomation_Tests
         public void CheckTheOpeningOfTheLinkInTheCareerTabTest()
         {
             var linkJob = "https://www.epam.com/careers/job-listings";
-            var career = _mainPage.CareerButton;
-            BrowserFactory.Browser.Action.MoveToElement(career.OriginalWebElement);
-            BrowserFactory.Browser.Action.Perform();
+            _mainPage.CareerButton.MoveToElement();
             _mainPage.JobListingsButton.Click();
 
             Assert.That(BrowserFactory.Browser.GetUrl, Is.EqualTo(linkJob), "Incorrect url is present!");
@@ -58,8 +56,8 @@ namespace Epam_TestAutomation_Tests
 
             _mainPage.SearchButton.Click();
             _mainPage.FrequentList.Click();
-            _mainPage.HeaderSearchButton.Click();
-            BrowserFactory.Browser.Action.ScrollToElement(_mainPage.SearchFooter.OriginalWebElement).Perform();
+            _mainPage.HeaderSearchButton.Click();           
+            _mainPage.SearchFooter.ScrollToElement();
             var actualResult = _searchResultPages.Articles.GetElements();
 
             Assert.That(actualResult, Has.Count.EqualTo(expectedResult), "Incorrect number of articles on the site!");
