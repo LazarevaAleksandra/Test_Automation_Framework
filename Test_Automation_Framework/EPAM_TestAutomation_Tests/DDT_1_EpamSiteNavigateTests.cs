@@ -68,9 +68,12 @@ namespace Epam_TestAutomation_Tests
             var resultLocation = _searchResultPages.GetResultsKeyword(filter.Location);
             var resultSkill = _searchResultPages.GetResultsKeyword(filter.Skill);
 
-            Assert.That(resultProfession, Is.True, "This profession was not found!");
-            Assert.That(resultLocation, Is.True, "This location was not found!");
-            Assert.That(resultSkill, Is.True, "This skill was not found!");
+            Assert.Multiple(() => 
+            {
+                Assert.That(resultProfession, Is.True, "This profession was not found!");
+                Assert.That(resultLocation, Is.True, "This location was not found!");
+                Assert.That(resultSkill, Is.True, "This skill was not found!");
+            });
         }
 
         [Test]
@@ -82,9 +85,12 @@ namespace Epam_TestAutomation_Tests
             var resultErrorMessage = _joinOurTeamPages.ErrorMessageDisplayed();
             var expResultErrorMessage = "Sorry, your search returned no results. Please try another combination.";
             var actResultErrorMessage = _joinOurTeamPages.ActualErrorMessage();
-        
-            Assert.That(resultErrorMessage, Is.True, "System error!");
-            Assert.That(expResultErrorMessage.Equals(actResultErrorMessage), "Incorrect error entry!");                     
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(resultErrorMessage, Is.True, "System error!");
+                Assert.That(expResultErrorMessage.Equals(actResultErrorMessage), "Incorrect error entry!");
+            });
         }
     }
 }
