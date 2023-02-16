@@ -43,8 +43,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
 
-        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
-
         public void JoinOurTeamPagesIsOpened()
         {
             CareerButton.MoveToElement();
@@ -69,61 +67,10 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             if (!string.IsNullOrEmpty(skill))
             {
                 SkillsLabel.Click();
-                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));               
-                SkillsCheckBox(skill).Click();              
+                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));
+                SkillsCheckBox(skill).Click();
             }
             FindButton.Click();
-
-            Waiters.WaitForCondition(SearchResultTitle.IsDisplayed);
-
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetLocationKeyword(string keyword)
-        {
-            LocationDropdown.Click();
-            LocationInput.SendKeys(keyword);
-            CitiesLineButton.Click();
-
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetSkillKeyword(string keyword)
-        {
-            SkillsLabel.Click();
-            Thread.Sleep(2000);
-            SkillsCheckBox(keyword).Click();
-            Waiters.WaitForCondition(SkillFilter.IsDisplayed);
-            FindButton.Click();
-           
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetSearchFilters(string profession, string location, string skill)
-        {
-            KeywordInput.SendKeys(profession);
-            LocationDropdown.Click();
-            Thread.Sleep(2000);
-            LocationInput.SendKeys(location);
-            CitiesLineButton.Click();
-            SkillsLabel.Click();
-            Thread.Sleep(2000);
-            SkillsCheckBox(skill).Click();
-            FindButton.Click();
-
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetErrorMessage(string profession, string location)
-        {
-            KeywordInput.SendKeys(profession);
-            LocationDropdown.Click();
-            Thread.Sleep(2000);
-            LocationInput.SendKeys(location);
-            CitiesLineButton.Click();
-            FindButton.Click();
-
-            return new JoinOurTeamPages();
         }
 
         public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();
