@@ -26,12 +26,12 @@ namespace Epam_TestAutomation_API_Tests
                 }
             };
 
-            var createPhone = new PhoneController(new CustomRestClient()).AddPhone<AllPhonesModels>(addPhone).Phone;
-            var receivePhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(createPhone.id).Phone;
-            deleteThePhone = receivePhone.id;
+            var createdPhone = new PhoneController(new CustomRestClient()).AddPhone<AllPhonesModels>(addPhone).Phone;
+            var receivedPhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(createdPhone.id).Phone;
+            deleteThePhone = receivedPhone.id;
             new PhoneController(new CustomRestClient()).DeletePhone<RestResponse>(deleteThePhone);
 
-            Assert.That(receivePhone.data.CapacityGb, Is.EqualTo(createPhone.data.CapacityGb),
+            Assert.That(receivedPhone.data.CapacityGb, Is.EqualTo(createdPhone.data.CapacityGb),
                 "The capacity of the created phone in GB is not equal to the original!");
         }
 
@@ -49,12 +49,12 @@ namespace Epam_TestAutomation_API_Tests
                 }
             };
 
-            var createPhone = new PhoneController(new CustomRestClient()).AddPhone<AllPhonesModels>(addPhone).Phone;
-            var receivePhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(createPhone.id).Phone;
-            deleteThePhone = receivePhone.id;
+            var createdPhone = new PhoneController(new CustomRestClient()).AddPhone<AllPhonesModels>(addPhone).Phone;
+            var receivedPhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(createdPhone.id).Phone;
+            deleteThePhone = receivedPhone.id;
             new PhoneController(new CustomRestClient()).DeletePhone<RestResponse>(deleteThePhone);
 
-            Assert.That(receivePhone, Is.Not.Null, "Phone not created!");
+            Assert.That(receivedPhone, Is.Not.Null, "Phone not created!");
         }
 
         [Test]
@@ -70,15 +70,15 @@ namespace Epam_TestAutomation_API_Tests
                 }
             };
 
-            var createPhone = new PhoneController(new CustomRestClient()).AddPhone<AllPhonesModels>(addPhone).Phone;
-            var receivePhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(createPhone.id).Phone;
-            deleteThePhone = receivePhone.id;
+            var createdPhone = new PhoneController(new CustomRestClient()).AddPhone<AllPhonesModels>(addPhone).Phone;
+            var receivedPhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(createdPhone.id).Phone;
+            deleteThePhone = receivedPhone.id;
             addPhone.data.color = "Black";
-            var updatePhone = new PhoneController(new CustomRestClient()).UpdatePhone<AllPhonesModels>(receivePhone.id, addPhone);
-            receivePhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(receivePhone.id).Phone;
+            var updatePhone = new PhoneController(new CustomRestClient()).UpdatePhone<AllPhonesModels>(receivedPhone.id, addPhone);
+            receivedPhone = new PhoneController(new CustomRestClient()).GetPhonesID<AllPhonesModels>(receivedPhone.id).Phone;
             new PhoneController(new CustomRestClient()).DeletePhone<RestResponse>(deleteThePhone);
 
-            Assert.That(createPhone.data.color, Is.EqualTo(receivePhone.data.color), "New color not installed!");
+            Assert.That(createdPhone.data.color, Is.EqualTo(receivedPhone.data.color), "New color not installed!");
         }
     }
 }

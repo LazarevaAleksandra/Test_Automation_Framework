@@ -45,7 +45,7 @@ namespace Epam_TestAutomation_API
             if (payload != null)
                 request.AddJsonBody(payload);
 
-            var response = _restClient.ExecutePost(request);
+            var response = _restClient.ExecutePut(request);
             return (typeof(T) == typeof(RestResponse))
                 ? (response, default)
                 : (response, GetDeserializedView<T>(response));
