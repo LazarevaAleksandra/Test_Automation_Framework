@@ -3,12 +3,20 @@ using Epam_TestAutomation_Core.Browser;
 using Epam_TestAutomation_Core.Elements;
 using Epam_TestAutomation_Core.Helper;
 using Epam_TestAutomation_Core.Utils;
+
+using Epam_TestAutomation_Utilities.Logger;
+
+
 using OpenQA.Selenium;
 
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class JoinOurTeamPages : BasePage
+
+    {
+
     {     
+
         public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
 
         public Link CareerButton => new Link(By.XPath("//*[@href = '/careers']"));
@@ -21,6 +29,8 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Dropdown LocationDropdown => new Dropdown(By.XPath("//*[@class='select2-selection select2-selection--single']"));
 
+        public Dropdown DropdownLocations => new Dropdown(By.XPath("//*[@class='select2-results__options open']"));
+
         public TextInput LocationInput => new TextInput(By.XPath("//*[@class='select2-search__field']"));
 
         public Button CitiesLineButton => new Button(By.XPath("//*[@class='select2-results__option select2-results__option--highlighted']"));
@@ -28,6 +38,8 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         public Label SkillsLabel => new Label(By.XPath("//*[@class='default-label']"));
 
         public Label SkillFilter => new Label(By.XPath("//*[@class='filter-tag']"));
+
+        public Dropdown SkillsDropdown => new Dropdown(By.XPath("//*[@class='multi-select-dropdown']"));
 
         public Checkbox SkillsCheckBox(string skill) => new Checkbox(By.XPath($"//*[@class='checkbox-custom-label'][contains(text(), '{skill}')]"));
 
@@ -37,11 +49,20 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
 
-        public JoinOurTeamPages JoinOurTeamPagesIsOpened()
+
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
+
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+
+
+
+        public void JoinOurTeamPagesIsOpened()
         {
             CareerButton.MoveToElement();
             Waiters.WaitForCondition(CareersBlog.IsDisplayed);
             JobListingsButton.Click();
+
+
 
             return new JoinOurTeamPages();
         }
@@ -73,33 +94,30 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             FindButton.Click();
            
             return new JoinOurTeamPages();
-        }
 
-        public JoinOurTeamPages GetSearchFilters(string profession, string location, string skill)
+}
+
+        public void FillInSearchFilter(string profession = null, string location = null, string skill = null)
         {
-            KeywordInput.SendKeys(profession);
-            LocationDropdown.Click();
-            Thread.Sleep(2000);
-            LocationInput.SendKeys(location);
-            CitiesLineButton.Click();
-            SkillsLabel.Click();
-            Thread.Sleep(2000);
-            SkillsCheckBox(skill).Click();
+            if (!string.IsNullOrEmpty(profession))
+            {
+                KeywordInput.SendKeys(profession);
+            }
+
+            if (!string.IsNullOrEmpty(location))
+            {
+                LocationDropdown.Click();
+                LocationInput.SendKeys(location);
+                CitiesLineButton.Click();
+            }
+
+            if (!string.IsNullOrEmpty(skill))
+            {
+                SkillsLabel.Click();
+                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));               
+                SkillsCheckBox(skill).Click();              
+            }
             FindButton.Click();
-
-            return new JoinOurTeamPages();
-        }
-
-        public JoinOurTeamPages GetErrorMessage(string profession, string location)
-        {
-            KeywordInput.SendKeys(profession);
-            LocationDropdown.Click();
-            Thread.Sleep(2000);
-            LocationInput.SendKeys(location);
-            CitiesLineButton.Click();
-            FindButton.Click();
-
-            return new JoinOurTeamPages();
         }
 
         public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();

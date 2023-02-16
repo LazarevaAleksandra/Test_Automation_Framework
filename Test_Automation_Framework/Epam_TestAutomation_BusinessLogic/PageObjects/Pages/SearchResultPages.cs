@@ -21,6 +21,10 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             var result = ResultsList.GetElements().Select(item => item.GetAttribute("innerText").Contains(keyword));
 
             return result.Any();
+
+        }       
+
         }        
+
     }
 }
