@@ -47,10 +47,13 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public Label SearchResultTitle => new Label(By.XPath("//*[@class='search-result__heading']"));
 
+        public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
+
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+
 
 
         public void JoinOurTeamPagesIsOpened()

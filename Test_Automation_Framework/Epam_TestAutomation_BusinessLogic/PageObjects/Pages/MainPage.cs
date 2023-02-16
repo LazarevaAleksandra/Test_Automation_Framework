@@ -32,10 +32,14 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 
         public ElementList ListOfLanguages = new ElementList(By.XPath("//*[@class = 'location-selector__item']"));
 
+
+        public ElementList CareerElementsList = new ElementList(By.XPath("//*[@class='tabs__title' and contains(@role,'presentation')]"));
+
         public ElementList CareerElementsList = new ElementList(By.XPath(".//div"));
 
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
+
 
 
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.ApplicationUrl);
