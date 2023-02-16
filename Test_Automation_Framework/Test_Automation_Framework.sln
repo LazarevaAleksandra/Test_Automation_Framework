@@ -16,7 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Epam.runsettings = Epam.runsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_TestData", "Epam_TestAutomation_TestData\Epam_TestAutomation_TestData.csproj", "{6A6DF284-FD90-4662-9C3D-71A5D1B579C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_TestData", "Epam_TestAutomation_TestData\Epam_TestAutomation_TestData.csproj", "{6A6DF284-FD90-4662-9C3D-71A5D1B579C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Epam_TestAutomation_BDD", "Epam_TestAutomation_BDD\Epam_TestAutomation_BDD.csproj", "{FAA4F960-AD76-4DFD-A92D-82CD25761BC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_API", "Epam_TestAutomation_API\Epam_TestAutomation_API.csproj", "{795050BD-D523-42BB-A196-E0407773A13D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Epam_TestAutomation_API_Tests", "Epam_TestAutomation_API_Tests\Epam_TestAutomation_API_Tests.csproj", "{C091D81B-3E42-4083-B142-E1C0A4ADF96D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +50,18 @@ Global
 		{6A6DF284-FD90-4662-9C3D-71A5D1B579C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A6DF284-FD90-4662-9C3D-71A5D1B579C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A6DF284-FD90-4662-9C3D-71A5D1B579C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAA4F960-AD76-4DFD-A92D-82CD25761BC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA4F960-AD76-4DFD-A92D-82CD25761BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA4F960-AD76-4DFD-A92D-82CD25761BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA4F960-AD76-4DFD-A92D-82CD25761BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{795050BD-D523-42BB-A196-E0407773A13D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{795050BD-D523-42BB-A196-E0407773A13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{795050BD-D523-42BB-A196-E0407773A13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{795050BD-D523-42BB-A196-E0407773A13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C091D81B-3E42-4083-B142-E1C0A4ADF96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C091D81B-3E42-4083-B142-E1C0A4ADF96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C091D81B-3E42-4083-B142-E1C0A4ADF96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C091D81B-3E42-4083-B142-E1C0A4ADF96D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

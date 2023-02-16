@@ -15,6 +15,7 @@
     <None Update="JoinOurTeamInfo\ErrorMessage.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+<<<<<<< HEAD
     <None Update="JoinOurTeamInfo\JoinOurTeam.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -27,6 +28,8 @@
     <None Update="JoinOurTeamInfo\Skills.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+=======
+>>>>>>> behavior_driven_testing
   </ItemGroup>
 
 </Project>
