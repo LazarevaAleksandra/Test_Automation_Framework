@@ -20,8 +20,16 @@ namespace Epam_TestAutomation_Core.Helper
 
         public static string ApplicationUrl => TestContext.Parameters.Get("ApplicationUrl").ToString();
 
+<<<<<<< HEAD
         public static string InsightsUrl => TestContext.Parameters.Get("InsightsUrl").ToString();
 
+=======
+
+
+        public static string InsightsUrl => TestContext.Parameters.Get("InsightsUrl").ToString();
+
+
+>>>>>>> 41582f18b222d0d2b82c1829b4a15c80a064761c
         public static string JoinOurTeamUrl => TestContext.Parameters.Get("JoinOurTeamUrl").ToString();
     }
 }

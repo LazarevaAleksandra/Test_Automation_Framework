@@ -56,6 +56,7 @@ namespace Epam_TestAutomation_Tests
             _mainPage.SearchButton.Click();
             _mainPage.FrequentList.Click();
             _mainPage.HeaderSearchButton.Click();
+            _mainPage.HeaderSearchButton.Click();           
             _mainPage.SearchFooter.ScrollToElement();
             var actualResult = _searchResultPages.Articles.GetElements();
 

@@ -8,9 +8,15 @@
 		<Parameter name ="LogsPath" value="Logs\Logs.txt" />
 		<Parameter name ="ApplicationUrl" value="https://www.epam.com/"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		<Parameter name ="InsightsUrl" value="https://www.epam.com/insights"/>
 >>>>>>> behavior_driven_testing
+=======
+
+		<Parameter name ="InsightsUrl" value="https://www.epam.com/insights"/>
+
+>>>>>>> 41582f18b222d0d2b82c1829b4a15c80a064761c
 		<Parameter name ="JoinOurTeamUrl" value="https://www.epam.com/careers/job-listings"/>
 	</TestRunParameters>
 </RunSettings>

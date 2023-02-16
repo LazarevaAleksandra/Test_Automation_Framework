@@ -16,6 +16,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 41582f18b222d0d2b82c1829b4a15c80a064761c
     <None Update="JoinOurTeamInfo\JoinOurTeam.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -28,8 +33,12 @@
     <None Update="JoinOurTeamInfo\Skills.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+<<<<<<< HEAD
 =======
 >>>>>>> behavior_driven_testing
+=======
+
+>>>>>>> 41582f18b222d0d2b82c1829b4a15c80a064761c
   </ItemGroup>
 
 </Project>

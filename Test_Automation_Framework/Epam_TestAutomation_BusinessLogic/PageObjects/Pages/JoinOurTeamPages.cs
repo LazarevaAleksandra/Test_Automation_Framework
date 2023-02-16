@@ -9,7 +9,6 @@ using OpenQA.Selenium;
 namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
 {
     public class JoinOurTeamPages : BasePage
-
     {    
         public Button CareersBlog => new Button(By.XPath("//*[@href='/careers/blog']"));
 
@@ -40,7 +39,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
         public Label ErrorMessage => new Label(By.XPath("//*[@class='search-result__error-message' and @role ='alert']"));
 
         public Label SearchResultTitle => new Label(By.XPath("//*[@class='search-result__heading']"));
-
         public override bool IsOpened() => BrowserFactory.Browser.GetUrl().Equals(TestSettings.JoinOurTeamUrl);
 
         public void JoinOurTeamPagesIsOpened()
@@ -49,7 +47,6 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             Waiters.WaitForCondition(CareersBlog.IsDisplayed);
             JobListingsButton.Click();
         }
-
         public void FillInSearchFilter(string profession = null, string location = null, string skill = null)
         {
             if (!string.IsNullOrEmpty(profession))
@@ -67,12 +64,11 @@ namespace Epam_TestAutomation_BusinessLogic.PageObjects.Pages
             if (!string.IsNullOrEmpty(skill))
             {
                 SkillsLabel.Click();
-                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));
-                SkillsCheckBox(skill).Click();
+                Waiters.WaitForCondition(() => !SkillsDropdown.GetAttribute("class").Contains("hidden"));               
+                SkillsCheckBox(skill).Click();              
             }
             FindButton.Click();
         }
-
         public bool ErrorMessageDisplayed() => ErrorMessage.IsDisplayed();
 
         public string ActualErrorMessage() => ErrorMessage.GetAttribute("innerText");
