@@ -1,5 +1,4 @@
 ﻿using Epam_TestAutomation_BusinessLogic.PageObjects.Pages;
-using Epam_TestAutomation_TestData.JoinOurTeamInfo;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -26,19 +25,19 @@ namespace Epam_TestAutomation_BDD.Steps
         [When(@"Enter the profession (.*) in the Keyword field")]
         public void WhenEnterTheProfessionManagerInTheKeywordField(string profession)
         {
-            _joinOurTeamPages.GetProfessionKeyword(profession);
+            _joinOurTeamPages.FillInSearchFilter(profession);
         }
 
         [When(@"Enter the location (.*) in the All Locations field")]
         public void WhenEnterTheLocationYerevanInTheAllLocationsField(string location)
         {
-            _joinOurTeamPages.GetLocationKeyword(location);
+            _joinOurTeamPages.FillInSearchFilter(location);
         }
 
         [When(@"Enter the skill (.*) in the All Skills field")]
         public void WhenEnterTheSkillBusinessAndDataAnalysisInTheAllSkillsField(string skill)
         {
-            _joinOurTeamPages.GetSkillKeyword(skill);
+            _joinOurTeamPages.FillInSearchFilter(skill);
         }
 
         [Then(@"The result that contains the (.*) is displayed on the JoinOurTeam page")]

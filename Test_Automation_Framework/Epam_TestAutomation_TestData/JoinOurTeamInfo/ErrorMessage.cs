@@ -4,7 +4,7 @@ namespace Epam_TestAutomation_TestData.JoinOurTeamInfo
 {
     public class ErrorMessage
     {
-        [JsonProperty("keywordProfession")] 
+        [JsonProperty("keywordProfession")]
         public string? ProfessionName;
 
         [JsonProperty("keywordLocation")]

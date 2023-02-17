@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,38 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Selenium.WebDriver" Version="4.7.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="109.0.5414.7400" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="JoinOurTeamInfo\ErrorMessage.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 41582f18b222d0d2b82c1829b4a15c80a064761c
-    <None Update="JoinOurTeamInfo\JoinOurTeam.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="JoinOurTeamInfo\Locations.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="JoinOurTeamInfo\Professions.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="JoinOurTeamInfo\Skills.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-<<<<<<< HEAD
-=======
->>>>>>> behavior_driven_testing
-=======
-
->>>>>>> 41582f18b222d0d2b82c1829b4a15c80a064761c
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
 </Project>
